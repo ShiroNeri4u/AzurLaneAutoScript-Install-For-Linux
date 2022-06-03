@@ -3,10 +3,8 @@
 pkgname=azurlane-autoscript-server
 _pkgname=alas
 _reponame=AzurLaneAutoScript
-_git=$_github
-# For China User _git=$_gitee
-_github=https://github.com
-_gitee=https://gitee.com
+_git=https://github.com
+# For China User _git=https://gitee.com
 pkgver=dev
 pkgrel=1
 pkgdesc="Azur Lane bot with GUI (Supports CN, EN, JP, TW, able to support other servers)"
