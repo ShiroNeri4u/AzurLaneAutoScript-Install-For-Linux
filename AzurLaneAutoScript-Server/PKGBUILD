@@ -39,4 +39,5 @@ package() {
     install -Dm777 "$srcdir/$reponame-Install-For-Linux/$reponame-Server/alas" "$pkgdir/usr/bin/"
     install -Dm777 "$srcdir/$reponame-Install-For-Linux/$reponame-Server/alas-chmod" "$pkgdir/usr/bin/"
     install -Dm777 "$srcdir/$reponame-Install-For-Linux/$reponame-Server/alas-uninstall" "$pkgdir/usr/bin/"
+    install -Dm644 "$srcdir/$reponame/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
     }
