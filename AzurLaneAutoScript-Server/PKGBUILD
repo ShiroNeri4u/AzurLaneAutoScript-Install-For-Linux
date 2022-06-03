@@ -9,7 +9,7 @@ arch=(any)
 url="https://github.com/LmeSzinc/AzurLaneAutoScript"
 # For China users url="https://gitee.com/LmeSzinc/AzurLaneAutoScript" 中国用户改成gitee源
 mkurl="https://github.com/ShiroNeri4u/AzurLaneAutoScript-Install-For-Linux"
-# For China users mkurl="https://gitee.com/Neri/azur-lane-auto-script-install-for-linux" 中国用户改成gitee源
+# For China users mkurl="https://gitee.com/Neri/AzurLaneAutoScript-Install-For-Linux" 中国用户改成gitee源
 license=('GPL3')
 depends=('git' 'bash' 'miniconda3' 'pip-tools' 'android-tools')
 source=("git+$url#branch=master"
