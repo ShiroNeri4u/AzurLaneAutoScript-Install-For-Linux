@@ -3,8 +3,8 @@
 pkgname=azurlane-autoscript-server
 _pkgname=alas
 _reponame=AzurLaneAutoScript
-_git=$github
-# For China User _git=$gitee
+_git=$_github
+# For China User _git=$_gitee
 _github=https://github.com
 _gitee=https://gitee.com
 pkgver=dev
