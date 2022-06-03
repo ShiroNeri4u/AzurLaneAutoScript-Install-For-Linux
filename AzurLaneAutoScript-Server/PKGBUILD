@@ -12,7 +12,7 @@ pkgrel=1
 pkgdesc="Azur Lane bot with GUI (Supports CN, EN, JP, TW, able to support other servers)"
 arch=(any)
 url="$_git/LmeSzinc/$_reponame"
-_mkurl="_git/ShiroNeri4u/$_reponame-Install-For-Linux"
+_mkurl="$_git/ShiroNeri4u/$_reponame-Install-For-Linux"
 license=('GPL3')
 depends=('git' 'bash' 'miniconda3' 'android-tools')
 source=("git+$url#branch=master"
