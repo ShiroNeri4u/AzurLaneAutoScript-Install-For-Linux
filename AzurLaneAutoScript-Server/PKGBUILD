@@ -2,21 +2,23 @@
 
 pkgname=azurlane-autoscript-server
 _pkgname=alas
+_reponame=AzurLaneAutoScript
+_git=$github
+# For China User Ch
+_github=https://github.com/
+_gitee=https://gitee.com/
 pkgver=dev
 pkgrel=1
 pkgdesc="Azur Lane bot with GUI (Supports CN, EN, JP, TW, able to support other servers)"
 arch=(any)
-url="https://github.com/LmeSzinc/AzurLaneAutoScript"
-# For China users url="https://gitee.com/LmeSzinc/AzurLaneAutoScript" 中国用户改成gitee源
-_mkurl="https://github.com/ShiroNeri4u/AzurLaneAutoScript-Install-For-Linux"
-# For China users _mkurl="https://gitee.com/Neri/AzurLaneAutoScript-Install-For-Linux" 中国用户改成gitee源
+url="$_git/LmeSzinc/$_reponame"
+_mkurl="_git/ShiroNeri4u/$_reponame-Install-For-Linux"
 license=('GPL3')
 depends=('git' 'bash' 'miniconda3' 'android-tools')
 source=("git+$url#branch=master"
         "git+$_mkurl#branch=master")
 sha256sums=('SKIP'
             'SKIP')
-_reponame=AzurLaneAutoScript
 
 prepare() {
     #!/bin/bash
