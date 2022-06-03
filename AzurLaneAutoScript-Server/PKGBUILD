@@ -25,6 +25,7 @@ prepare() {
     cp "$srcdir/$reponame/config/deploy.template-AidLux-cn.yaml" "$srcdir/$reponame/config/deploy.yaml"
     cd "$srcdir/$reponame/"
     conda create -n alas python==3.7.6 -y
+    conda clean -ay
     source /opt/miniconda3/bin/activate $HOME/.conda/envs/alas
     pip install -r requirements-in.txt
     rm -rf "$srcdir/$reponame/.git"
