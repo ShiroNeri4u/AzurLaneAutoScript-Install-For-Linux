@@ -11,7 +11,7 @@ url="https://github.com/LmeSzinc/AzurLaneAutoScript"
 mkurl="https://github.com/ShiroNeri4u/AzurLaneAutoScript-Install-For-Linux"
 # For China users mkurl="https://gitee.com/Neri/AzurLaneAutoScript-Install-For-Linux" 中国用户改成gitee源
 license=('GPL3')
-depends=('git' 'bash' 'miniconda3' 'pip-tools' 'android-tools')
+depends=('git' 'bash' 'miniconda3' 'android-tools')
 source=("git+$url#branch=master"
         "git+$mkurl#branch=master")
 sha256sums=('SKIP'
