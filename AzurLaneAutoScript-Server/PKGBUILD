@@ -36,7 +36,7 @@ package() {
     mkdir -p "$pkgdir/opt/$_pkgname"
     mkdir -p "$pkgdir/usr/bin"
     cp -rT "$srcdir/$reponame/" "$pkgdir/opt/$_pkgname"
-    install -Dm777 "$srcdir/AzurLaneAutoScript-Install-For-Linux/AzurLaneAutoScript-Server/alas" "$pkgdir/usr/bin/"
-    install -Dm777 "$srcdir/AzurLaneAutoScript-Install-For-Linux/AzurLaneAutoScript-Server/alas-chmod" "$pkgdir/usr/bin/"
-    install -Dm777 "$srcdir/AzurLaneAutoScript-Install-For-Linux/AzurLaneAutoScript-Server/alas-uninstall" "$pkgdir/usr/bin/"
+    install -Dm777 "$srcdir/$reponame-Install-For-Linux/$reponame-Server/alas" "$pkgdir/usr/bin/"
+    install -Dm777 "$srcdir/$reponame-Install-For-Linux/$reponame-Server/alas-chmod" "$pkgdir/usr/bin/"
+    install -Dm777 "$srcdir/$reponame-Install-For-Linux/$reponame-Server/alas-uninstall" "$pkgdir/usr/bin/"
     }
