@@ -1,5 +1,0 @@
-#!/bin/bash
-conda-env remove -n alas
-conda clean -ay
-sudo pacman -Rsc azurlane-autoscript-server
-sudo rm -rf /opt/alas
