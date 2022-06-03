@@ -20,8 +20,6 @@ _reponame=AzurLaneAutoScript
 
 prepare() {
     #!/bin/bash
-    rm -rf "$srcdir/$_reponame/webapp"
-    rm -rf "$srcdir/$_reponame/doc"
     cp "$srcdir/$_reponame/config/deploy.template-AidLux-cn.yaml" "$srcdir/$_reponame/config/deploy.yaml"
     cd "$srcdir/$_reponame/"
     conda create -n alas python==3.7.6 -y
