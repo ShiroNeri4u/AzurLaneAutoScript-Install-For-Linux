@@ -1,0 +1,55 @@
+# Maintainer: Shiro_Neri(Shiro_Neri@iCloud.com)
+
+pkgname=azurlane-autoscript-server
+_pkgname=alas
+_reponame=AzurLaneAutoScript
+_git=https://github.com
+# For China User _git=https://gitee.com
+pkgver=dev
+pkgrel=1
+pkgdesc="Azur Lane bot with GUI (Supports CN, EN, JP, TW, able to support other servers)"
+arch=(any)
+url="$_git/LmeSzinc/$_reponame"
+_mkurl="$_git/ShiroNeri4u/$_reponame-Install-For-Linux"
+license=('GPL3')
+depends=('git' 'bash' 'android-tools')
+makedepends=('wget' 'gcc')
+source=("git+$url#branch=master"
+        "git+$_mkurl#branch=master")
+sha256sums=('SKIP'
+            'SKIP')
+
+prepare() {
+    #!/bin/bash
+    git config --global --add safe.directory /opt/alas
+    cp "$srcdir/$_reponame-Install-For-Linux/$_reponame-Server/deploy.yaml" "$srcdir/$_reponame/config/"
+    cd "$srcdir/$_reponame/"
+    rm -rf "$srcdir/$_reponame/.git"
+    mkdir "$srcdir/$_reponame/.git"
+    cp -rT "$srcdir/../$_reponame" "$srcdir/$_reponame/.git/"
+    }
+
+build() {
+    #!/bin/bash
+    mkdir "$srcdir/$_reponame/python"
+    cd "$srcdir/$_reponame/"
+    wget https://www.python.org/ftp/python/3.7.6/Python-3.7.6.tgz
+    tar -zxvf Python-3.7.6.tgz
+    cd Python-3.7.6
+    ./configure --prefix=$srcdir/$_reponame/python
+    make && make install
+    cd "$srcdir/$_reponame/"
+    rm -r Python-3.7.6
+    rm Python-3.7.6.tgz
+    $srcdir/$_reponame/python/bin/pip3 install --upgrade pip
+    $srcdir/$_reponame/python/bin/pip3 install -r "$srcdir/$_reponame/requirements-in.txt"
+    }
+
+package() {
+    mkdir -p "$pkgdir/opt/$_pkgname"
+    mkdir -p "$pkgdir/usr/bin"
+    cp -rT "$srcdir/$_reponame" "$pkgdir/opt/$_pkgname"
+    chmod 777 -R "$pkgdir/opt/$_pkgname"
+    install -Dm777 "$srcdir/$_reponame-Install-For-Linux/$_reponame-Server/alas" "$pkgdir/usr/bin/"
+    install -Dm644 "$srcdir/$_reponame/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    }
